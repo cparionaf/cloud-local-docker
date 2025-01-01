@@ -1,0 +1,13 @@
+services:
+  api:
+    build: 
+      context: ${APP_PATH:-.}
+      dockerfile: Dockerfile
+    ports:
+      - "${HOST_PORT}:${APP_PORT}"
+    environment:
+      - AWS_PROFILE=${AWS_PROFILE}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      - AWS_SSO_SESSION=${AWS_SSO_SESSION}      
+    volumes:
+      - ~/.aws:/home/app/.aws 
