@@ -79,13 +79,13 @@ docker-compose up
 ```
 2. Make a test request
 ```bash
-curl -o file-local.png “http://localhost:5000/s3/file?bucketName=tu-bucket&fileName=tu-archivo.png”
+curl -o file-local.png “http://localhost:5000/s3/file?bucketName=bucket-name&fileName=file.png”
 ```
 Parameters to customize:
 
 * file-local.png: Name under which the file will be saved on your machine.
-* tu-bucket: Name of your S3 bucket
-* your-file.png: Name of the file inside the bucket, the extension will be the one your file has (it can be .pdf for example).
+* bucket-name: Name of your S3 bucket
+* file.png: Name of the file inside the bucket, the extension will be the one your file has (it can be .pdf for example).
 
 ---
 
