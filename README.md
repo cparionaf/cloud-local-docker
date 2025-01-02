@@ -54,7 +54,7 @@ getfacl ~/.aws
 
 ### Estructura del Proyecto
 Nuestro proyecto sigue una estructura clara y modular:
-
+```
 proyecto/
 ├── src/
 │   └── MocWebApi/             
@@ -64,7 +64,7 @@ proyecto/
 ├── docker-compose.yml         
 ├── Dockerfile                  
 └── .env                       
-
+```
 ## POC S3
 
 El proyecto incluye un mock que demuestra la interacción con AWS S3. 
