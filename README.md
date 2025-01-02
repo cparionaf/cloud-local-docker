@@ -60,13 +60,13 @@ Our project follows a clear and modular structure:
 ```
 project/
 ├── src/
-│ └└── MocWebApi/             
-│ ├├── Controllers/        
-│ │ └─── S3Controller.cs 
-│ └└── Program.cs         
-├─── docker-compose.yml         
-├─── Dockerfile                  
-└─── .env                       
+│   └── MocWebApi/             
+│       ├── Controllers/        
+│       │   └── S3Controller.cs 
+│       └── Program.cs         
+├── docker-compose.yml         
+├── Dockerfile                  
+└── .env                                         
 ```
 ## POC S3
 
