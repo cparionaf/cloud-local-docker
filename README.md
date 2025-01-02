@@ -80,6 +80,6 @@ curl -o archivo-local.png "http://localhost:5000/s3/file?bucketName=tu-bucket&fi
 ```
 Parámetros a personalizar:
 
-archivo-local.png: Nombre con el que se guardará el archivo en tu máquina
-tu-bucket: Nombre de tu bucket S3
-tu-archivo.png: Nombre del archivo dentro del bucket , la extensión será la que tenga tu archivo (puede ser .pdf por ejemplo)
+* archivo-local.png: Nombre con el que se guardará el archivo en tu máquina
+* tu-bucket: Nombre de tu bucket S3
+* tu-archivo.png: Nombre del archivo dentro del bucket , la extensión será la que tenga tu archivo (puede ser .pdf por ejemplo)
