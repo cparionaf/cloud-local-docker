@@ -36,14 +36,14 @@ To work with this project, you will need to have installed:
 
 To enable SSO authentication in our .NET application, we need to add the following packages:
 
-````bash
+```bash
 dotnet add package AWSSDK.SSOOIDC
 dotnet add package AWSSDK.SSO
 ```
 ### .aws folder permissions settings
 Our application runs inside a Docker container using the user 'app' (UID 1654). In order for this user to access the AWS credentials of our local system, we need to configure the appropriate permissions:
 
-````bash
+```bash
 # Install ACL if not already installed
 sudo apt-get install acl
 
@@ -74,11 +74,11 @@ The project includes a mock that demonstrates the interaction with AWS S3.
 
 ### POC Test
 1. Start the services from the folder.
-````bash
+```bash
 docker-compose up
 ```
 2. Make a test request
-````bash
+```bash
 curl -o file-local.png “http://localhost:5000/s3/file?bucketName=tu-bucket&fileName=tu-archivo.png”
 ```
 Parameters to customize:
