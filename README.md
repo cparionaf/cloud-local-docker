@@ -87,6 +87,7 @@ Parameters to customize:
 * tu-bucket: Name of your S3 bucket
 * your-file.png: Name of the file inside the bucket, the extension will be the one your file has (it can be .pdf for example).
 
+---
 
 # Configuración Local AWS con Docker para .NET
 
