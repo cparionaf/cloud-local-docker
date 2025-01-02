@@ -1,3 +1,93 @@
+# Cloud Local Docker
+[English](#aws-local-configuration-with-docker-for-net) | [Español](#configuración-local-aws-con-docker-para-net)
+
+# AWS Local Configuration with Docker for .NET
+
+This repository provides a complete configuration for developing .NET applications that need to interact with AWS services, enabling a local development environment using Docker. It includes base configurations and a functional mock for testing, facilitating local development and testing with AWS services. The project includes a functional mock to demonstrate integration with S3.
+
+## Description
+
+The project is designed to solve the common challenge of local development when working with AWS services. It provides a configuration that allows:
+- Run .NET applications that connect to AWS in a Dockerized environment.
+- Securely authenticate using AWS SSO
+- Perform local testing using the included mock
+- Maintain consistency between different development environments
+
+## Prerequisites
+
+To work with this project, you will need to have installed:
+
+- WSL2 (Windows Subsystem for Linux).  
+  [Official WSL installation guide](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+- AWS CLI v2  
+  [Official AWS CLI Installation Guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+- Docker Desktop 
+  [Docker with WSL2 Integration Guide](https://docs.docker.com/desktop/setup/install/windows-install/)
+
+### Recommendations
+  - Ubuntu is recommended as Linux distribution
+  - The configuration is optimized to work with WSL2, if you work on Windows you will need to make modifications.
+
+### Initial Configuration
+
+### AWS Packages Needed
+
+To enable SSO authentication in our .NET application, we need to add the following packages:
+
+````bash
+dotnet add package AWSSDK.SSOOIDC
+dotnet add package AWSSDK.SSO
+```
+### .aws folder permissions settings
+Our application runs inside a Docker container using the user 'app' (UID 1654). In order for this user to access the AWS credentials of our local system, we need to configure the appropriate permissions:
+
+````bash
+# Install ACL if not already installed
+sudo apt-get install acl
+
+# Give read permissions to user app (UID 1654)
+setfacl -R -m u:1654:rwx ~/.aws
+setfacl -R -m d:u:1654:rwx ~/.aws
+
+# Verify the configured permissions
+getfacl ~/.aws
+```
+
+### Project Structure
+Our project follows a clear and modular structure:
+```
+project/
+├── src/
+│ └└── MocWebApi/             
+│ ├├── Controllers/        
+│ │ └─── S3Controller.cs 
+│ └└── Program.cs         
+├─── docker-compose.yml         
+├─── Dockerfile                  
+└─── .env                       
+```
+## POC S3
+
+The project includes a mock that demonstrates the interaction with AWS S3. 
+
+### POC Test
+1. Start the services from the folder.
+````bash
+docker-compose up
+```
+2. Make a test request
+````bash
+curl -o file-local.png “http://localhost:5000/s3/file?bucketName=tu-bucket&fileName=tu-archivo.png”
+```
+Parameters to customize:
+
+* file-local.png: Name under which the file will be saved on your machine.
+* tu-bucket: Name of your S3 bucket
+* your-file.png: Name of the file inside the bucket, the extension will be the one your file has (it can be .pdf for example).
+
+
 # Configuración Local AWS con Docker para .NET
 
 Este repositorio proporciona una configuración completa para desarrollar aplicaciones .NET que necesitan interactuar con servicios AWS, permitiendo un entorno de desarrollo local mediante Docker. Incluye configuraciones base y un mock funcional para pruebas, facilitando el desarrollo y las pruebas locales con servicios de AWS. El proyecto incluye un mock funcional para demostrar la integración con S3.
