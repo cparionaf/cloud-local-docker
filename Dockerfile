@@ -3,7 +3,7 @@
 # Primera etapa: configuración base
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-USER $APP_UID
+USER app
 
 # Segunda etapa: construcción
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build

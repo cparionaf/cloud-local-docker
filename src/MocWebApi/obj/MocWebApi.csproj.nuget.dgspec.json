@@ -1,0 +1,95 @@
+{
+  "format": 1,
+  "restore": {
+    "/mnt/c/Users/info/OneDrive/Escritorio/clean-architecture/moc-net-aws/src/MocWebApi/MocWebApi.csproj": {}
+  },
+  "projects": {
+    "/mnt/c/Users/info/OneDrive/Escritorio/clean-architecture/moc-net-aws/src/MocWebApi/MocWebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/c/Users/info/OneDrive/Escritorio/clean-architecture/moc-net-aws/src/MocWebApi/MocWebApi.csproj",
+        "projectName": "MocWebApi",
+        "projectPath": "/mnt/c/Users/info/OneDrive/Escritorio/clean-architecture/moc-net-aws/src/MocWebApi/MocWebApi.csproj",
+        "packagesPath": "/home/edan-jmj/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/info/OneDrive/Escritorio/clean-architecture/moc-net-aws/src/MocWebApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/edan-jmj/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AWSSDK.Extensions.NETCore.Setup": {
+              "target": "Package",
+              "version": "[3.7.301, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.7.410.12, )"
+            },
+            "AWSSDK.SSO": {
+              "target": "Package",
+              "version": "[3.7.400.70, )"
+            },
+            "AWSSDK.SSOOIDC": {
+              "target": "Package",
+              "version": "[3.7.400.70, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/edan-jmj/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
